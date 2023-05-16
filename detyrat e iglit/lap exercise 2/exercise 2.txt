@@ -1,0 +1,14 @@
+<?php
+// Read file
+$filename = 'input.txt';
+$data = file_get_contents($filename);
+
+// Replace numbers with "#"
+$modifiedData = preg_replace('/[0-9]/', '#', $data);
+
+// Write modified data to another file
+$outputFilename = 'output.txt';
+file_put_contents($outputFilename, $modifiedData);
+
+echo "File manipulation completed. Modified data written to $outputFilename.";
+?>

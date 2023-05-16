@@ -1,0 +1,33 @@
+<?php
+// Read student file
+$filename = 'students.txt';
+$data = file_get_contents($filename);
+
+// Split the data into lines
+$lines = explode("\n", $data);
+
+// Create table header
+echo "<table>";
+echo "<tr>";
+echo "<th>ID</th>";
+echo "<th>Name</th>";
+echo "<th>Surname</th>";
+echo "<th>Literature</th>";
+echo "<th>Math</th>";
+echo "<th>Art</th>";
+echo "<th>Science</th>";
+echo "<th>Average</th>";
+echo "</tr>";
+
+// Loop through the lines and display student information
+foreach ($lines as $line) {
+    $studentData = explode("\t", $line);
+    echo "<tr>";
+    foreach ($studentData as $data) {
+        echo "<td>$data</td>";
+    }
+    echo "</tr>";
+}
+
+echo "</table>";
+?>

@@ -1,0 +1,27 @@
+Write a php function that calculates the power 
+
+function calculatePower($number, $power) {
+    if ($power == 0) {
+        return 1;
+    } else {
+        $result = 1;
+        for ($i = 1; $i <= $power; $i++) {
+            $result *= $number;
+        }
+        return $result;
+    }
+}
+
+
+Display the following table using the custom power function that you wrote: 
+
+echo "<table>";
+echo "<tr><th>num</th><th>num^2</th><th>num^3</th></tr>";
+for ($i = 1; $i <= 10; $i++) {
+    echo "<tr>";
+    echo "<td>" . $i . "</td>";
+    echo "<td>" . calculatePower($i, 2) . "</td>";
+    echo "<td>" . calculatePower($i, 3) . "</td>";
+    echo "</tr>";
+}
+echo "</table>";

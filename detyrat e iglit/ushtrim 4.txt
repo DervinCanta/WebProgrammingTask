@@ -1,0 +1,17 @@
+Mod Rewrite Create a php file called file.php that GETs two parameters and prints them Use mod_rewrite to rewrite the URL from: /file.php?x=7&y=3 -> /file.php/x/y Make sure to also submit the .htaccess file 
+
+
+file.php :
+
+<?php
+$x = $_GET['x'];
+$y = $_GET['y'];
+
+echo "x = $x, y = $y";
+?>
+
+
+.htaccess :
+
+RewriteEngine On
+RewriteRule ^file.php/([^/]+)/([^/]+)$ file.php?x=$1&y=$2 [QSA,L]
